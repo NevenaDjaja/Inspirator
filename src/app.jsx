@@ -9,7 +9,7 @@ var InspiratorMessage = React.createClass({
     return (
       <div>
         <h1>Inspiration on {date}</h1>
-        <p>{message}</p>
+        <p style={{fontSize: '32px'}}>{message}</p>
       </div>
     );
   }
@@ -32,6 +32,7 @@ var InspiratorForm = React.createClass({
     return (
       <form onSubmit={this.handleSubmit}>
         <textarea
+          style={{height: '100px', width: '294px'}}
           type="text"
           ref="message"
           placeholder="inspiring message"
@@ -73,8 +74,9 @@ var Inspirator = React.createClass({
     const message = this.state.message;
     return (
       <div>
-        <InspiratorMessage date={date} message={message} />
+        <InspiratorMessage date={date} message={message}/>
         <InspiratorForm onNewMessage={this.handleNewMessage}/>
+        <img width="300" src="../assets/crogandboo.jpg"/>
       </div>
     );
   }
